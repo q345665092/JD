@@ -47,8 +47,7 @@ if ($.isNode()) {
     cookiesArr.push(jdCookieNode[item])
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
-  if (JSON.stringify(process.env).indexOf('GITHUB') > -1) process.exit(0)
-} else {
+  } else {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 let inviteCodes = [];
@@ -110,7 +109,7 @@ const activeEndTime = '2021/06/20 00:00:00+08:00';
       }
       if ($.canHelp) {
         console.log(`\n\n如果有剩余助力机会，则给作者lxk0301以及随机码助力`)
-        await doHelp();
+        //await doHelp();
       }
     }
   }
