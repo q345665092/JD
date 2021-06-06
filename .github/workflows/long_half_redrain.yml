@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Redmi->合成小金刚
+name: 半点京豆雨_龙王庙
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 1 21-27 5 *'
+    - cron: '30 16-23/1 * * *' # UTC=0 时区
   watch:
     types: started
   repository_dispatch:
-    types: Redmi->合成小金刚
+    types: 半点京豆雨_龙王庙
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【Redmi->合成小金刚】'
+      - name: '运行 【半点京豆雨_龙王庙】'
         run: |
-          node adolf_mi.js
+          node long_half_redrain.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

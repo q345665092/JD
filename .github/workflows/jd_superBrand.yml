@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 人头马x博朗
+name: 特物Z|万物皆可国创@wenmoux
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 1 20-31 5 *' # UTC=0 时区
+    - cron: '30 3 * * *' # UTC=0 时区
   watch:
     types: started
   repository_dispatch:
-    types: 人头马x博朗
+    types: 特物Z|万物皆可国创@wenmoux
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【人头马x博朗】'
+      - name: '运行 【特物Z|万物皆可国创@wenmoux】'
         run: |
-          node adolf_martin.js
+          node jd_superBrand.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -49,5 +49,3 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          ADOLF_ADDSKU: ${{ secrets.ADOLF_ADDSKU }}
-          ADOLF_MARTIN: ${{ secrets.ADOLF_MARTIN }}

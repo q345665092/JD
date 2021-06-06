@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_speed_redpocket
+name: jd_star_shop
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 14,16 * * *'
+    - cron: '0 1,21 * * *' # UTC=0 时区
   watch:
     types: started
   repository_dispatch:
-    types: speed_redpocket
+    types: 明星小店(星店长)
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【京东极速版红包】'
+      - name: '运行 【明星小店(星店长)】'
         run: |
-          node jd_speed_redpocket.js
+          node jd_star_shop.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -49,4 +49,3 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          JS_USER_AGENTS: ${{ secrets.JS_USER_AGENTS }}

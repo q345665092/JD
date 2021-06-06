@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 618大势新品赏
+name: 618手机竞猜
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 1,12 * 5,6 *' # UTC=0 时区
+    - cron: '0 0/3 * 6 *'
   watch:
     types: started
   repository_dispatch:
-    types: 618大势新品赏
+    types: 618手机竞猜
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【618大势新品赏】'
+      - name: '运行 【618手机竞猜】'
         run: |
-          node adolf_newInteraction.js
+          node zy_618jc.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -49,3 +49,4 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
+          ADOLF_ADDSKU: ${{ secrets.ADOLF_ADDSKU }}
